@@ -2,7 +2,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Bell, MapPin, Mic, Send, AlertTriangle, ShieldCheck, Truck, Hospital } from 'lucide-react'
+import { Bell, MapPin, Mic, Send, AlertTriangle, ShieldCheck, Truck } from 'lucide-react'
 
 // Coordinates center for San Francisco Downtown
 const DEFAULT_LAT = 37.7882
