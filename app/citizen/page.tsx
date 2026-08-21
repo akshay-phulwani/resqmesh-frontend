@@ -141,7 +141,6 @@ export default function CitizenReporting() {
       }
     } catch (e) {
       console.error('Error submitting report:', e)
-      alert('Connection error. Is backend running?')
     } finally {
       setIsSubmitting(false)
     }
