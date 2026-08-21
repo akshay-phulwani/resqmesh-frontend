@@ -4,9 +4,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Bell, MapPin, Mic, Send, AlertTriangle, ShieldCheck, Truck } from 'lucide-react'
 
-// Coordinates center for San Francisco Downtown
-const DEFAULT_LAT = 37.7882
-const DEFAULT_LON = -122.4075
+// Coordinates center for Jaipur, Rajasthan, India
+const DEFAULT_LAT = 26.9124
+const DEFAULT_LON = 75.7873
 
 export default function CitizenReporting() {
   const [description, setDescription] = useState('')

@@ -59,10 +59,10 @@ const TacticalMap: React.FC<TacticalMapProps> = ({
   resources,
   blockages
 }) => {
-  const minLat = 37.74;
-  const maxLat = 37.81;
-  const minLon = -122.47;
-  const maxLon = -122.39;
+  const minLat = 26.83;
+  const maxLat = 26.95;
+  const minLon = 75.71;
+  const maxLon = 75.87;
 
   const getXY = (lat: number, lon: number) => {
     const x = ((lon - minLon) / (maxLon - minLon)) * 800;
@@ -90,16 +90,16 @@ const TacticalMap: React.FC<TacticalMapProps> = ({
           <rect width="100%" height="100%" fill="url(#grid)" />
 
           <line x1="100" y1="500" x2="700" y2="100" stroke="#122540" strokeWidth="6" strokeLinecap="round" />
-          <text x="350" y="320" fill="#1b3a60" className="text-[10px] font-bold uppercase tracking-wider transform -rotate-30">Market St</text>
+          <text x="350" y="320" fill="#1b3a60" className="text-[10px] font-bold uppercase tracking-wider transform -rotate-30">Tonk Road</text>
 
           <line x1="450" y1="0" x2="450" y2="600" stroke="#122540" strokeWidth="4" />
-          <text x="460" y="50" fill="#1b3a60" className="text-[10px] font-bold uppercase tracking-wider">Van Ness Ave</text>
+          <text x="460" y="50" fill="#1b3a60" className="text-[10px] font-bold uppercase tracking-wider">JLN Marg</text>
 
           <line x1="0" y1="250" x2="800" y2="250" stroke="#122540" strokeWidth="4" />
-          <text x="50" y="240" fill="#1b3a60" className="text-[10px] font-bold uppercase tracking-wider">Geary Blvd</text>
+          <text x="50" y="240" fill="#1b3a60" className="text-[10px] font-bold uppercase tracking-wider">Ajmer Road</text>
 
           <line x1="80" y1="530" x2="680" y2="130" stroke="#0f1f35" strokeWidth="4" />
-          <text x="330" y="360" fill="#142c4b" className="text-[10px] font-bold uppercase tracking-wider transform -rotate-30">Mission St</text>
+          <text x="330" y="360" fill="#142c4b" className="text-[10px] font-bold uppercase tracking-wider transform -rotate-30">MI Road</text>
 
           {selectedRec && selectedRec.route_geometry && (
              <>
@@ -368,7 +368,15 @@ export default function OperatorCommandCenter() {
     }
   }
 
-  const roundTime = (s: number) => `${Math.floor(s / 60)}m ${s % 60}s`
+  const rejectDispatch = (recId: number) => {
+    setSelectedRec(null)
+    alert('Recommendation rejected. Please select an alternative dispatch recommendation.')
+  }
+
+  const roundTime = (s?: number) => {
+    if (s === undefined || s === null || isNaN(s)) return "N/A"
+    return `${Math.floor(s / 60)}m ${Math.floor(s % 60)}s`
+  }
 
   return (
     <div className="flex-1 flex flex-col md:flex-row overflow-hidden h-[calc(100vh-64px)] relative bg-[#070b13]">

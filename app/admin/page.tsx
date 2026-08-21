@@ -41,8 +41,8 @@ export default function AdminConsole() {
   // Custom blockage form state
   const [blockId, setBlockId] = useState('')
   const [blockDesc, setBlockDesc] = useState('')
-  const [blockLat, setBlockLat] = useState('37.7802')
-  const [blockLon, setBlockLon] = useState('-122.4105')
+  const [blockLat, setBlockLat] = useState('26.9094')
+  const [blockLon, setBlockLon] = useState('75.7990')
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
 
@@ -156,11 +156,11 @@ export default function AdminConsole() {
   // Preset blockages for quick demo testing
   const addPresetBlockage = (type: 'union_square' | 'civic_center' | 'cpmc') => {
     if (type === 'union_square') {
-      handleAddBlockage('BLOCK_UNION_SQ', 'Water Main Break on Stockton St', 37.788, -122.408)
+      handleAddBlockage('BLOCK_UNION_SQ', 'Water Main Break near Tonk Road', 26.9094, 75.7990)
     } else if (type === 'civic_center') {
-      handleAddBlockage('BLOCK_CIVIC_CTR', 'Protest closing McAllister St', 37.779, -122.418)
+      handleAddBlockage('BLOCK_CIVIC_CTR', 'Protest closing JLN Marg', 26.8912, 75.8152)
     } else if (type === 'cpmc') {
-      handleAddBlockage('BLOCK_CPMC_CORRIDOR', 'Active gas leak repairs on Van Ness Ave', 37.7865, -122.4225)
+      handleAddBlockage('BLOCK_CPMC_CORRIDOR', 'Road cave-in repair near Ajmer Road', 26.8943, 75.8037)
     }
   }
 
@@ -323,22 +323,22 @@ export default function AdminConsole() {
                   onClick={() => addPresetBlockage('union_square')}
                   className="w-full text-left rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500/50 p-3 hover:bg-slate-900/80 transition group"
                 >
-                  <p className="text-xs font-bold text-white group-hover:text-amber-400">Union Square Blockage</p>
-                  <p className="text-[10px] text-slate-500 mt-0.5">Blocks routes crossing downtown Union Square streets.</p>
+                  <p className="text-xs font-bold text-white group-hover:text-amber-400">Tonk Road Blockage</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">Blocks routes crossing downtown Tonk Road streets.</p>
                 </button>
                 <button
                   onClick={() => addPresetBlockage('civic_center')}
                   className="w-full text-left rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500/50 p-3 hover:bg-slate-900/80 transition group"
                 >
-                  <p className="text-xs font-bold text-white group-hover:text-amber-400">Civic Center Closure</p>
-                  <p className="text-[10px] text-slate-500 mt-0.5">Forces dispatch rerouting around City Hall area.</p>
+                  <p className="text-xs font-bold text-white group-hover:text-amber-400">JLN Marg Closure</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">Forces dispatch rerouting around JLN Marg area.</p>
                 </button>
                 <button
                   onClick={() => addPresetBlockage('cpmc')}
                   className="w-full text-left rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500/50 p-3 hover:bg-slate-900/80 transition group"
                 >
-                  <p className="text-xs font-bold text-white group-hover:text-amber-400">CPMC / Van Ness Gas Leak</p>
-                  <p className="text-[10px] text-slate-500 mt-0.5">Blocks immediate path to CPMC Van Ness hospital.</p>
+                  <p className="text-xs font-bold text-white group-hover:text-amber-400">Ajmer Road Blockage</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">Blocks immediate path to Santokba Durlabhji Hospital.</p>
                 </button>
               </div>
             </div>
