@@ -230,7 +230,7 @@ export default function OperatorCommandCenter() {
   const [resources, setResources] = useState<any[]>([])
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
-  const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000'
+  const wsUrl = process.env.NEXT_PUBLIC_WS_URL || apiUrl.replace(/^http/, 'ws')
 
   const loadInitialData = async () => {
     try {
