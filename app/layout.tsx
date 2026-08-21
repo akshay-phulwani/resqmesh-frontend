@@ -28,12 +28,6 @@ export default function RootLayout({
                 </span>
                 ResQMesh
               </Link>
-              <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
-                <Link href="/" className="hover:text-white transition">Home</Link>
-                <Link href="/citizen" className="hover:text-white transition">Citizen Portal</Link>
-                <Link href="/operator" className="hover:text-white transition">Command Center</Link>
-                <Link href="/admin" className="hover:text-white transition">Resource Management</Link>
-              </nav>
             </div>
             <div className="flex items-center gap-4">
               <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-2.5 py-0.5 text-xs font-medium text-red-400">
