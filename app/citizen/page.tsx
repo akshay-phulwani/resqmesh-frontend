@@ -118,7 +118,7 @@ export default function CitizenReporting() {
     if (!reportText.trim() || isSubmitting) return
     setIsSubmitting(true)
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+    const apiUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '')
     try {
       const res = await fetch(`${apiUrl}/api/incidents/report`, {
         method: 'POST',

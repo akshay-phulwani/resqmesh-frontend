@@ -44,7 +44,7 @@ export default function AdminConsole() {
   const [blockLat, setBlockLat] = useState('26.9094')
   const [blockLon, setBlockLon] = useState('75.7990')
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+  const apiUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '')
 
   // Fetch initial data
   const fetchData = async () => {

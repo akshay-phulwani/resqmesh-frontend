@@ -229,8 +229,8 @@ export default function OperatorCommandCenter() {
   const [hospitals, setHospitals] = useState<any[]>([])
   const [resources, setResources] = useState<any[]>([])
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
-  const wsUrl = process.env.NEXT_PUBLIC_WS_URL || apiUrl.replace(/^http/, 'ws')
+  const apiUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '')
+  const wsUrl = (process.env.NEXT_PUBLIC_WS_URL || apiUrl.replace(/^http/, 'ws')).replace(/\/$/, '')
 
   const loadInitialData = async () => {
     try {
